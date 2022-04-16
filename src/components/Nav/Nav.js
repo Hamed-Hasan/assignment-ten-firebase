@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { auth } from '../../firebase.init';
 import useNav from '../../hooks/useNav';
 import './Nav.css'
@@ -29,9 +29,9 @@ const Nav = () => {
 <div className="flex md:order-2">
 <button type="button" className="text-white bg-[#2AC18C] hover:bg-[#166549] focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#166549] dark:focus:ring-blue-800">
   { 
-  user ? (<span onClick={() => signOut(auth)}>Logout</span>) 
+  user ? (<span className='text-white' onClick={() => signOut(auth)}>Logout</span>) 
   : 
-  (<Link to="/login">Login</Link>)
+  (<Link to="/login" className='text-white'>Login</Link>)
 }
  
 </button>
@@ -44,16 +44,24 @@ const Nav = () => {
 <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
 <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 <li>
-<Link to="/" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</Link>
+<NavLink to="/"
+className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+aria-current="page">Home</NavLink>
 </li>
 <li>
-<Link to="/blog" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</Link>
+<NavLink to="/blog" 
+className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+>Blog</NavLink>
 </li>
 <li>
-<Link to="/about" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</Link>
+<NavLink to="/about" 
+className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+>About Us</NavLink>
 </li>
 <li>
-<Link to="/contact" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</Link>
+<NavLink to="/contact" 
+className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+>Contact</NavLink>
 </li>
 </ul>
 </div>
