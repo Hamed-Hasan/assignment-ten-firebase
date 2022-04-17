@@ -74,7 +74,7 @@ const handleSubmit = (e) => {
 const [terms, setTerms] = useState(false);
     return (
   
-<div className="main-container">
+<div className="main-container mb-56">
 
 <img className="wave" src={wave} alt=''/>
 	<div className="form-container">

@@ -3,9 +3,9 @@ import author from '../../images/hamed-hasan.jpg'
 
 const About = () => {
     return (
-        <div>
-           <section style={{height: '100vh'}} className="flex items-center text-gray-600 body-font bg-gray-600 min-h-screen">
-        <div className="container mx-auto flex px-5 md:flex-row flex-col items-center">
+        <div className='mb-60'>
+           <section style={{height: '100vh'}} className="flex items-center text-gray-600 body-font  ">
+        <div className=" container mt-72 mx-auto flex px-5 md:flex-row flex-col items-center">
         
         <div className="p-4 md:w-1/2 w-full h-full">
         <div className="h-full bg-black p-8 rounded py-12">
@@ -28,7 +28,7 @@ const About = () => {
 
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <div class=" p-2">
-        <div class="bg-white px-6 py-8 rounded-lg shadow-lg text-center">
+        <div class="bg-gray-100 px-6 py-8 rounded-lg shadow-lg text-center">
           <div class="mb-3">
             <img
               class="w-auto mx-auto rounded-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
@@ -47,7 +47,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* <Footer/> */}
+  
         </div>
     );
 };

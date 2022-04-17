@@ -97,7 +97,7 @@ signInWithEmail(userInfo.email, userInfo.password)
 <>
 
 
-<div className="main-container">
+<div className="main-container mb-72">
 <img className="wave" src={wave} alt=""/>
 	<div className="form-container" >
 		<div className="img">
