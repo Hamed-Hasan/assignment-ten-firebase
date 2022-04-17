@@ -3,6 +3,7 @@ import './HeroStyles.css'
 import {AiOutlineSearch} from 'react-icons/ai'
 
 import Video from '../../../images/maldivesVideo.mp4'
+import TypeWritter from '../../TypeWritter/TypeWritter'
 
 function Hero() {
     return (
@@ -12,7 +13,8 @@ function Hero() {
             </video>
             <div className="overlay"></div>
             <div className="content">
-                <h1 className='text-6xl font-medium'>First Class Travel</h1>
+                {/* <h1 className='text-6xl font-medium'>First Class Travel</h1> */}
+                <TypeWritter/>
                 <h2 className='my-2 text-xl'>Top 1% Locations Worldwide</h2>
                 <form className="hero-form">
                     <div>
