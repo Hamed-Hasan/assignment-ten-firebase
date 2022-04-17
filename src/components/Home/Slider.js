@@ -2,7 +2,7 @@ import React from 'react';
 import './Slider.css'
 const Slider = () => {
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto py-20'>
             <h2 className='text-center py-8 text-6xl mt-14'>Awesome Places</h2>
 <div id="controls-carousel" class="relative" data-carousel="static">
 

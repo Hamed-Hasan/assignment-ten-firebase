@@ -13,7 +13,7 @@ const Home = () => {
             <Header />
             <Services/>
             <Slider/>
-            <Footer />
+            
         </div>
     );
 };
