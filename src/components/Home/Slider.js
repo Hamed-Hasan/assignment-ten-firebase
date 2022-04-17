@@ -3,7 +3,7 @@ import './Slider.css'
 const Slider = () => {
     return (
         <div className='container mx-auto'>
-            <h2 className='text-center py-8 text-6xl'>Awesome Places</h2>
+            <h2 className='text-center py-8 text-6xl mt-14'>Awesome Places</h2>
 <div id="controls-carousel" class="relative" data-carousel="static">
 
 <div class="slider overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-96 2xl:h-96">

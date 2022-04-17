@@ -15,7 +15,7 @@ const Nav = () => {
    
 
         
-<nav className={`border-gray-200 px-2 sm:px-8 py-2.5 fixed w-full top-0 z-50 transition-all ${
+<nav as={Link} className={`border-gray-200 px-2 sm:px-8 py-2.5 fixed w-full top-0 z-50 transition-all ${
                 navbar && "bg-white shadow-lg set-border"
             }`}>
 <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -43,11 +43,19 @@ const Nav = () => {
 </div>
 <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
 <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+   
+{/* <Link href="home#services">Services</Link> */}
+
 <li>
 <NavLink to="/"
 className={({ isActive }) => (isActive ? 'active' : 'inactive') }
 aria-current="page">Home</NavLink>
 </li>
+{/* <li>
+<Link href="/home#services"
+className={({ isActive }) => (isActive ? 'active' : 'inactive') }
+aria-current="page">Services</Link>
+</li> */}
 <li>
 <NavLink to="/blog" 
 className={({ isActive }) => (isActive ? 'active' : 'inactive')}
