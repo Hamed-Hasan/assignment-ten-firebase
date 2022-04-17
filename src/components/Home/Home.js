@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "./Home.css";
 import Services from "./Services";
+import Slider from "./Slider";
 
 
 
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Header />
             <Services/>
+            <Slider/>
             <Footer />
         </div>
     );
