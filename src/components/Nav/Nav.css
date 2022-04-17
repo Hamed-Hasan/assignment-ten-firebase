@@ -1,28 +1,27 @@
-.set-border{
-    border-bottom: 2px solid #2AC18C !important;
+.set-border {
+  border-bottom: 2px solid #2ac18c !important;
 }
-nav a{
-    font-size: 16px;
-    color: #000000de;
-    margin: 14px 0;
-    font-size: 20px;
+nav a {
+  font-size: 16px;
+  color: #000000de;
+  margin: 14px 0;
+  font-size: 20px;
 }
-nav a:hover{
-    color: #2AC18C;
+nav a:hover {
+  color: #2ac18c;
 }
 .active {
-    color: #2AC18C;
-    border-bottom: 3px solid #2AC18C;
-   padding: 10px 6px;
-   transition: .4s
+  color: #2ac18c;
+  border-bottom: 3px solid #2ac18c;
+  padding: 10px 6px;
+  transition: 0.4s;
 }
-.inactive{
-    color: #000000
+.inactive {
+  color: #000000;
 }
 
-@media only screen and (max-width: 768px){
-	nav li{
-        margin: 9px 0px;
-        
-    }
-    }
+@media only screen and (max-width: 768px) {
+  nav li {
+    margin: 9px 0px;
+  }
+}
