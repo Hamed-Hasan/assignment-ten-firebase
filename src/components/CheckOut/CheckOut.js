@@ -1,16 +1,44 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import svg from '../../images/success-modal.svg'
+
 import { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { auth } from "../../../firebase.init";
+
 import "../../styles/Login.css";
 import bg from "../../images/bg.svg"
 import wave from "../../images/wave.png"
 import avatar from "../../images/avatar.svg"
 import { auth } from "../../firebase.init";
 
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    borderRadius: '16px',
+    boxShadow: 24,
+    p: 4,
+  };
+
+
+
 const CheckOut = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+
+
     const [userInfo, setUserInfo] = useState({
         email: '',
         password: '',
@@ -40,12 +68,14 @@ if(validPassword){
 const handleSubmit = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
-	toast.success('You Are Successfully SignUp')
+	toast.success('Send Your Information')
+    handleOpen()
 }
 const [terms, setTerms] = useState(false);
     return (
   
 <div className="main-container">
+
 <img className="wave" src={wave} alt=''/>
 	<div className="form-container">
 		<div className="img">
@@ -101,13 +131,37 @@ const [terms, setTerms] = useState(false);
 	
  		 </div>
     
-            	<input   disabled={!terms} type="submit" className="btn" value="Sign Up"/>
+            	<button   disabled={!terms} type="submit" className="btn" value="Sign Up">
+                    Checkout</button>
 		
 			 <Link to="/signup">create a new account?</Link>
-			   {hookError && <p className="text-red-600">{hookError?.message}</p>}
+			   {/* {hookError && <p className="text-red-600">{hookError?.message}</p>} */}
 			 <ToastContainer />
+
+{/* popup modal */}
+             <div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <div className='text-center flex justify-center'>
+          <img src={svg} className="h-24 " alt="" />
+          </div>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+          Thank You For Your Submission
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+           Decades later, Claire, now ill, allows her son to make a documentary based on the idea that the process of creating a memorial is actually part of the grieving process.
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
+
             </form>
-	
+    
         </div>
     </div>
 </div>
