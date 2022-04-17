@@ -3,15 +3,15 @@ import React from 'react';
 const Blog = () => {
     return (
         <div className='mt-32'>
-            <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-        <h2 class="mb-12 text-center text-2xl text-gray-900 font-bold md:text-4xl">Three Difference between `authorization` and `authentication`</h2>
-        <div class="grid blog gap-8 md:grid-rows-2 lg:grid-cols-2">
-          <div class="row-span-2 mb-14 p-6 border border-gray-100 rounded-xl bg-gray-100 text-center sm:p-8">
-            <div class=" flex flex-col justify-center mb-0">
+            <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+        <h2 className="mb-12 text-center text-2xl text-gray-900 font-bold md:text-4xl">Three Difference between `authorization` and `authentication`</h2>
+        <div className="grid blog gap-8 md:grid-rows-2 lg:grid-cols-2">
+          <div className="row-span-2 mb-14 p-6 border border-gray-100 rounded-xl bg-gray-100 text-center sm:p-8">
+            <div className=" flex flex-col justify-center mb-0">
              
-              <p class="text-gray-600 md:text-xl"> <span class="font-serif">"</span> 
+              <p className="text-gray-600 md:text-xl"> <span className="font-serif">"</span> 
               <div>
-                  <h6 class="text-lg font-semibold leading-none"><b>What is Authentication</b></h6>
+                  <h6 className="text-lg font-semibold leading-none"><b>What is Authentication</b></h6>
             
               </div>
 Authentication is the process of identifying users and validating who they claim to be. One of the most common and obvious factors to authenticate identity is a password. If the user name matches the password credential, it means the identity is valid, and the system grants access to the user.
@@ -31,17 +31,17 @@ But if you have different use cases for the users, or different levels made for 
 
 You could use a third party user and role database, and connect it with Firebase. Or you could use Firebase and define a collection of users and also combine it with the new custom claims and make a cloud function that will be the glue for the whole system.
 using the phone number verification provided by Firebase. It is an easy way to let your users access your app without using a social media third party login. However, Firebase inform you, that if you only use phone verification and a one time password (OTP), it will not be considered safe, compared to other solutions that use multi factor authentication.
-<span class="font-serif">"</span></p>
+<span className="font-serif">"</span></p>
              
             </div>
           </div>
 
-          <div class="p-6 border border-gray-100 rounded-xl bg-gray-100 sm:flex sm:space-x-8 sm:p-8">
-            <div class="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
+          <div className="p-6 border border-gray-100 rounded-xl bg-gray-100 sm:flex sm:space-x-8 sm:p-8">
+            <div className="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
             <div>
-                  <h6 class="text-lg font-semibold leading-none"><b>Why are using `firebase`?</b></h6>
+                  <h6 className="text-lg font-semibold leading-none"><b>Why are using `firebase`?</b></h6>
               </div>
-              <p class="text-gray-600"> <span class="font-serif">"</span> 
+              <p className="text-gray-600"> <span className="font-serif">"</span> 
               What other options do you have to implement authentication?
 
 Firebase Authentication is a powerful and reasonably easy to use tool that gives you(r app) the ability to authenticate your users using their preferred auth mechanism (rather than your proprietary system requiring your users to remember passwords for myriad sites).
@@ -57,14 +57,14 @@ Multi-factor authentication. ...
 Certificate-based authentication. ...
 Biometric authentication. ...
 Token-based authentication.
- <span class="font-serif">"</span></p>
+ <span className="font-serif">"</span></p>
             
             </div>
           </div>
-          <div class="p-6 border mb-20 border-gray-100 rounded-xl bg-gray-100 sm:flex sm:space-x-8 sm:p-8">
-            <div class="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
-            <h6 class="text-lg font-semibold leading-none"> What other services does `firebase` provide?</h6>
-              <p class="text-gray-600"> <span class="font-serif">"</span>  other than authentication
+          <div className="p-6 border mb-20 border-gray-100 rounded-xl bg-gray-100 sm:flex sm:space-x-8 sm:p-8">
+            <div className="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
+            <h6 className="text-lg font-semibold leading-none"> What other services does `firebase` provide?</h6>
+              <p className="text-gray-600"> <span className="font-serif">"</span>  other than authentication
 
 Firebase is originally developed by Firebase inc and later acquired by Google. It provides different kinds of services that help you to develop high-quality mobile and web applications to grow your business. It is compatible with Web, iOS, Android, and OS X clients. With Firebase, developers don’t need to worry about the backend programming, Authentication, API development, database (real-time cloud-hosted NoSQL database and cloud firestore), File storage, etc. Firebase provides all the services with very efficient and fast performance.
 
@@ -85,7 +85,7 @@ Remote Config
 Firebase is a full package that can help in developing your mobile or web applications faster with fewer resources and more efficiency. Now, let’s look at some of the services and use of it.
 This article purely focuses on how firebase services can make the mobile application development process easier.
 We know that the widely used services for this purpose are Cloud Messaging, Authentication, Dynamic Links, Predictions, Google Analytics, and Remote Config. Let’s discuss these services in detail.
- <span class="font-serif">"</span></p>
+ <span className="font-serif">"</span></p>
     
             </div>
           </div>
