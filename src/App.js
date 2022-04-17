@@ -19,10 +19,11 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route
-                    path="/checkout"
+                    path="/checkout/:serviceId"
                     element={
                         <RequireAuth>
                             {/* <Generator /> */}
+
                             <CheckOut/>
                         </RequireAuth>
                     }

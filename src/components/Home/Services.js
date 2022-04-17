@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Service from './Service';
 
 const Services = () => {
+    const [service, setService] = useState([]);
+    useEffect(() => {
+        fetch('data.json')
+       .then(res => res.json())
+       .then(data => setService(data))
+    }, []);
     return (
-        <div>
-            <h2>services</h2>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis veritatis impedit sapiente ea? Minima nulla eos magnam officiis vero iusto, magni nesciunt repellendus, sit enim temporibus cumque recusandae ea, doloribus repellat? Ex tempora asperiores consequatur eos ducimus nostrum obcaecati fugit, maxime minus? Incidunt quam sequi doloremque rem, nesciunt assumenda nemo voluptatum repellat expedita neque quisquam reprehenderit eaque eligendi ipsa velit. Reiciendis fugit est ea id blanditiis perspiciatis aspernatur recusandae, voluptatem nihil voluptates quibusdam vero harum porro a quaerat quidem placeat tenetur aliquid voluptate cum sit, explicabo corporis ullam. Aliquid sapiente laborum doloribus quibusdam natus sequi, ratione culpa provident reprehenderit? Accusantium iusto tempora delectus ab similique itaque a sequi impedit voluptate hic? Ipsam totam exercitationem aspernatur maiores id ut assumenda? Incidunt, expedita? Facilis dolore asperiores quam ex aspernatur nemo laudantium impedit sequi, aperiam possimus numquam, eligendi itaque laboriosam quaerat illum repellat iste quos fugit maiores reiciendis fuga quo nesciunt. Molestias aperiam inventore natus molestiae distinctio non ex porro eum eaque eveniet totam in, modi dolores ipsum cumque qui sapiente adipisci repellat consequuntur dolorem veniam consectetur nemo. Explicabo rem vel temporibus sapiente, impedit dolorum odit, illum enim, modi nobis at? Autem eaque aspernatur delectus impedit nobis facere ad quisquam laudantium nihil illum modi quaerat dolor, dignissimos voluptatum quo maiores sunt voluptate sequi asperiores commodi cupiditate culpa minus? Cumque consequuntur fugiat mollitia accusamus consequatur possimus unde, cum vel excepturi nobis est sit dignissimos et placeat accusantium deleniti! Temporibus dolorum odit tenetur deleniti consequatur dolorem nostrum, quae quas quibusdam, similique facilis consectetur, repudiandae voluptas. Nobis accusantium, odit nihil at doloribus repellendus ex, obcaecati quas rem, voluptatum minima aperiam repellat. Commodi consequatur distinctio similique, eius modi dolor autem repellendus itaque minus esse facilis dicta reprehenderit delectus voluptatem eos soluta omnis maxime libero nulla est necessitatibus tempora assumenda? Beatae quis eveniet repellendus consequuntur inventore fuga accusantium aliquam sunt doloremque quod minima neque porro consequatur, assumenda velit nesciunt facilis sapiente ipsum laboriosam nam reprehenderit. Minima veritatis commodi cupiditate rerum iusto eaque ipsam veniam quasi voluptatem voluptate animi aliquam repellat nam, omnis reprehenderit quisquam, culpa eligendi. Quasi sunt esse magnam cumque impedit. Delectus, omnis reprehenderit perferendis fugiat magni dolor eveniet quaerat deleniti quam natus non quidem ullam minus neque optio amet adipisci ab? Nobis recusandae nostrum quisquam provident explicabo, necessitatibus nemo ipsum corrupti quae quam totam, eveniet odio eum distinctio iure sapiente quidem? Possimus distinctio laudantium nisi vero deserunt. Commodi nesciunt, praesentium, amet aut magnam hic cum modi assumenda doloribus voluptatem distinctio, autem architecto. Perferendis dolorum voluptas quaerat repellendus rerum numquam iusto totam nostrum possimus sed. Porro quo ipsam commodi tempore fugit iusto dolor laborum doloremque eveniet, fugiat at ullam aut recusandae, nostrum sunt distinctio! Modi quis fugit tempora magni consectetur corrupti voluptates, ut consequatur saepe esse tempore natus laborum sed a! Consectetur ipsam officiis perspiciatis animi, iusto porro placeat sed sunt magnam veniam quidem iure voluptatem sit ratione et nobis! Cupiditate ducimus assumenda suscipit repellendus non magnam, voluptates hic, exercitationem quae nihil reprehenderit cum commodi ea laudantium ratione? Magnam odio illum atque, corrupti consequatur quasi harum doloribus?
+        <div className='container mx-auto'>
+          <div className='py-16'>
+          <h2 className='text-center text-3xl md:text-5xl '>All-Inclusive Resorts</h2>
+          <p className='text-center text-xl mt-3'>On the Caribbean's Best Beaches</p>
+          </div>
+
+<div className="grid md:grid-cols-3 gap-10">
+{
+    service.map(service => <Service
+    key={service.id}
+    service={service}
+    />)
+}
+</div>
         </div>
     );
 };
