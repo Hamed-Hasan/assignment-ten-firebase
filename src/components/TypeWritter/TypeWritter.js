@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 const TypeWritter = () => {
   return (
     <div>
+      
       <h1 className="text-6xl font-medium"></h1>
       <h1
         style={{ paddingTop: "3rem", margin: "auto 0", fontWeight: "normal" }}
@@ -29,9 +30,9 @@ const TypeWritter = () => {
             loop={5}
             cursor
             cursorStyle=" | "
-            typeSpeed={60}
-            deleteSpeed={80}
-            delaySpeed={3000}
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1000}
           />
         </span>
       </h1>
