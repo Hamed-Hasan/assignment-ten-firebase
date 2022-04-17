@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAN2CqYiYpNEyISIW2h0w9IDoLmcAmFES8",
-  authDomain: "conceptual-react-auth.firebaseapp.com",
-  projectId: "conceptual-react-auth",
-  storageBucket: "conceptual-react-auth.appspot.com",
-  messagingSenderId: "405325374522",
-  appId: "1:405325374522:web:3e2cfaafbb29cd5249c103"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 const app = initializeApp(firebaseConfig);

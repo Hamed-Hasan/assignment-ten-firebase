@@ -10,12 +10,20 @@ import bg from "../../../images/bg.svg"
 import wave from "../../../images/wave.png"
 import avatar from "../../../images/avatar.svg"
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { BiErrorCircle } from 'react-icons/bi';
+import { GrValidate } from 'react-icons/gr';
 const Login = () => {
    
 	const emailRef = useRef('');
      const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
+    
+    })
+     const [success, setSuccess] = useState({
+        email: "",
+        password: "",
+        success:""
     })
     const [errors, setErrors] = useState({
         email: "",
@@ -30,10 +38,12 @@ const Login = () => {
         const validEmail = emailRegex.test(e.target.value)
         if(validEmail) {
             setUserInfo({...userInfo, email: e.target.value})
+            setSuccess({...success,email: 'Right Way !!'})
             setErrors({...errors, email: ''})
         }else{
             setErrors({...errors, email: 'please type valid mail'})
             setUserInfo({...userInfo, email: ''})
+            setSuccess({...success,email: ''})
         }
     }
     const handlePasswordChange = (e) => {
@@ -41,9 +51,11 @@ const Login = () => {
         const validPassword = emailRegex.test(e.target.value)
         if(validPassword) {
             setUserInfo({...userInfo, password: e.target.value})
+            setSuccess({...success,password: 'Right Pass'})
             setErrors({...errors, password: ''})
         }else{
             setErrors({...errors, password: 'please type valid password'})
+            setSuccess({...success,password: ''})
             setUserInfo({...userInfo, password: ''})
         }
     }
@@ -51,7 +63,12 @@ const Login = () => {
 const handleLogin = (e) => {
 e.preventDefault();
 signInWithEmail(userInfo.email, userInfo.password)
-
+if(userInfo.email === ''){
+    setErrors('Please Field Out Mail Field')
+}
+if(userInfo.password === ''){
+    setErrors('Please Field Out Password Field')
+}
 }
  useEffect(() => {
         const error = hookError || googleError;
@@ -79,7 +96,7 @@ signInWithEmail(userInfo.email, userInfo.password)
         const email = emailRef.current.value;
         if (email) {
             await sendPasswordResetEmail(email);
-            // toast('Sent email');
+            toast.success('Sent email');
         }
         else{
             toast('please enter your valid email address');
@@ -114,7 +131,12 @@ signInWithEmail(userInfo.email, userInfo.password)
            		   <div className="div">
            		   	
            		   		<input ref={emailRef} onChange={handleEmailChange} type="Email" className="input" placeholder="Email" required />
-							  {errors?.email && <p className="text-red-600 mt-12">{errors.email}</p>}
+							  {errors?.email && <p className="text-red-600 text-left mt-8 ml-6 ">
+                                  <BiErrorCircle className='relative -left-5 top-6'/>
+                                  {errors.email}</p>}
+							  {success?.email && <p className="text-green-500 text-left mt-8 ml-6">
+                                  <GrValidate className='relative -left-5 top-5'/>
+                                  {success.email}</p>}
            		   </div>
            		</div>
            		<div className="input-div pass">
@@ -124,7 +146,12 @@ signInWithEmail(userInfo.email, userInfo.password)
            		   <div className="div">
            		    
            		    	<input onChange={handlePasswordChange} type="password" placeholder='Password' className="input"/>
-						   {errors?.password && <p className="text-red-600 mt-12">{errors.password}</p> }
+                           {errors?.password && <p className="text-red-600 text-left mt-8 ml-6 ">
+                                  <BiErrorCircle className='relative -left-5 top-6'/>
+                                  {errors.password}</p>}
+							  {success?.password && <p className="text-green-500 text-left mt-8 ml-6">
+                                  <GrValidate className='relative -left-5 top-5'/>
+                                  {success.password}</p>}
             	   </div>
             	</div>
             	<div>

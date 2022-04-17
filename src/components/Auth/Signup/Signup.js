@@ -9,14 +9,19 @@ import bg from "../../../images/bg.svg"
 import wave from "../../../images/wave.png"
 import avatar from "../../../images/avatar.svg"
 import SocialLogin from "../SocialLogin/SocialLogin";
-
+import { BiErrorCircle } from 'react-icons/bi';
+import { GrValidate } from 'react-icons/gr';
 
 
 
 
 const Signup = () => {
     
-
+    const [success, setSuccess] = useState({
+        email: "",
+        password: "",
+        success:""
+    })
   
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -39,9 +44,11 @@ const validPassword = validRegx.test(e.target.value)
 if(validPassword){
  setUserInfo({...userInfo, email: e.target.value})
  setError({...error, email: ''})
+ setSuccess({...success,email: 'wow you are providing a valid mail'})
 }else{
     setError({...error, email: 'invalid email'})
     setUserInfo({...userInfo, email: ''})
+    setSuccess({...success,email: ''})
 }
 }
 const handlePasswordChange = (e) => {
@@ -53,6 +60,7 @@ const handlePasswordChange = (e) => {
         setError({ ...error, password: "" });
     } else {
         setError({ ...error, password: "Minimum 6 characters!" });
+        setSuccess({...success,password: ''})
         setUserInfo({ ...userInfo, password: "" });
     }
 };
@@ -60,10 +68,12 @@ const handlePasswordChange = (e) => {
 const handleConfirmPasswordChange = (e) => {
 	if (e.target.value === userInfo.password) {
 		setUserInfo({ ...userInfo, confirmPass: e.target.value });
+        setSuccess({...success,password: 'Password Match Successfully'})
 		setError({ ...error, password: "" });
 	} else {
 		setError({ ...error, password: "Password's don't match" });
 		setUserInfo({ ...userInfo, confirmPass: "" });
+        setSuccess({...success,password: ''})
 	}
 };
 const handleSubmit = (e) => {
@@ -116,9 +126,12 @@ const handleSubmit = (e) => {
            		   </div>
            		   <div className="div">
            		   		<input onChange={handleEmailChange} type="Email" className="input" required placeholder='Email'/>
-							  {error?.email && <p className="text-red-600 mt-12">
-							
-								  {error.email}</p>}	  
+                              {error?.email && <p className="text-red-600 text-left mt-8 ml-6 ">
+                                  <BiErrorCircle className='relative -left-5 top-'/>
+                                  {error.email}</p>}
+							  {success?.email && <p className="text-green-500 text-left mt-8 ml-6">
+                                  <GrValidate className='relative -left-5 top-5'/>
+                                  {success.email}</p>}	  
            		   </div>
            		</div>
            		<div className="input-div one">
@@ -129,7 +142,12 @@ const handleSubmit = (e) => {
            		   		<h5>Password</h5>
            		   		<div className='relative'>
 						  <input onChange={handlePasswordChange} type={showPass ? "text" : "password"} className="input" placeholder=" password"/>
-						  {error?.password && <p className="text-red-600">{error.password}</p>}
+                          {error?.password && <p className="text-red-600 text-left -mt-2 ml-6 ">
+                                  <BiErrorCircle className='relative -left-5 top-6'/>
+                                  {error.password}</p>}
+							  {success?.password && <p className="text-green-500 text-left -mt-3 ml-6">
+                                  <GrValidate className='relative -left-5 top-5'/>
+                                  {success.password}</p>}
 						  <p className="absolute top-3 right-5 cursor-pointer" onClick={() => setShowPass(!showPass)}>👁</p>
 						  </div>
            		   </div>
