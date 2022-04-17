@@ -5,8 +5,8 @@ const Blog = () => {
         <div className='mt-32'>
             <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
         <h2 class="mb-12 text-center text-2xl text-gray-900 font-bold md:text-4xl">Three Difference between `authorization` and `authentication`</h2>
-        <div class="grid gap-8 md:grid-rows-2 lg:grid-cols-2">
-          <div class="row-span-2 h-50 p-6 border border-gray-100 rounded-xl bg-gray-100 text-center sm:p-8">
+        <div class="grid blog gap-8 md:grid-rows-2 lg:grid-cols-2">
+          <div class="row-span-2 mb-14 p-6 border border-gray-100 rounded-xl bg-gray-100 text-center sm:p-8">
             <div class=" flex flex-col justify-center mb-0">
              
               <p class="text-gray-600 md:text-xl"> <span class="font-serif">"</span> 
@@ -24,7 +24,14 @@ Authorization happens after a user’s identity has been successfully authentica
 While in authorization process, person’s or user’s authorities are checked for accessing the resources.
 While in this process, users or persons are validated.
 While it needs user’s privilege or security levels.
-hile it determines What permission do user have? <span class="font-serif">"</span></p>
+hile it determines What permission do user have? 
+need some sort of access control. And Firebase databases will notify you if you don’t have a minimum of access control. The minimum access control in Firebase world it will the database rules. If you don’t use access control, you will let the door open for users getting access to foreign data. For many applications the minimum level will be enough. And you don’t need roles and different level of access every time.
+
+But if you have different use cases for the users, or different levels made for them, it will be necessary for you to handle the authorization. The rules of the database will help you a little, but you have to enhance the identity platform.
+
+You could use a third party user and role database, and connect it with Firebase. Or you could use Firebase and define a collection of users and also combine it with the new custom claims and make a cloud function that will be the glue for the whole system.
+using the phone number verification provided by Firebase. It is an easy way to let your users access your app without using a social media third party login. However, Firebase inform you, that if you only use phone verification and a one time password (OTP), it will not be considered safe, compared to other solutions that use multi factor authentication.
+<span class="font-serif">"</span></p>
              
             </div>
           </div>
@@ -54,7 +61,7 @@ Token-based authentication.
             
             </div>
           </div>
-          <div class="p-6 border mb-4 border-gray-100 rounded-xl bg-gray-100 sm:flex sm:space-x-8 sm:p-8">
+          <div class="p-6 border mb-20 border-gray-100 rounded-xl bg-gray-100 sm:flex sm:space-x-8 sm:p-8">
             <div class="space-y-4 mt-4 text-center sm:mt-0 sm:text-left">
             <h6 class="text-lg font-semibold leading-none"> What other services does `firebase` provide?</h6>
               <p class="text-gray-600"> <span class="font-serif">"</span>  other than authentication
