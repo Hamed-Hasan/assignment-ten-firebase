@@ -5,11 +5,10 @@ const TypeWritter = () => {
   return (
     <div>
       
-      <h1 className="text-6xl font-medium"></h1>
       <h1
         style={{ paddingTop: "3rem", margin: "auto 0", fontWeight: "normal" }}
       >
-        <span style={{ fontSize: "44px" }}>Providing</span>{" "}
+        <span style={{ fontSize: "50px",fontWeight:'bold' }}>First Class Travel</span>{" "}
         <span
           style={{
             color: "white",
@@ -20,7 +19,7 @@ const TypeWritter = () => {
         >
           <Typewriter
             words={[
-              "First Class Travel",
+        
               "Travel Management",
               "Passenger assistance",
               "Consulting!",
